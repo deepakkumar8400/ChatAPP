@@ -1,16 +1,31 @@
-import { useState } from 'preact/hooks'
-import preactLogo from './assets/preact.svg'
-import viteLogo from '/vite.svg'
 import './app.css'
+import {RouterProvider,createBrowserRouter} from 'react-router-dom'
+import Homepage from './components/Homepage'
+import Login from './components/Login'
+import Signup from './components/Signup'
 
+const router=createBrowserRouter([
+  {
+    path:'/',
+    element:<Homepage/>
+  },
+  {
+    path:'/login',
+    element:<Login/>
+  },
+  {
+    path:'/register',
+    element:<Signup/>
+  }
+])
 export function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
     <>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+     <div className='flex h-screen p-4 items-center justify-center'>
+       <RouterProvider router={router}/>
+     </div>
+
     </>
   )
 }
