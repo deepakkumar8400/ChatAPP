@@ -12,6 +12,7 @@
     "axios": "^1.8.4",
     "preact": "^10.26.2",
     "react-hot-toast": "^2.5.2",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^7.4.0"
   },
   "devDependencies": {

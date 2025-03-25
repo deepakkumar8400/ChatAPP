@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 body {
-  background: url(../public/download.jpg);
+  background: url(../download.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
