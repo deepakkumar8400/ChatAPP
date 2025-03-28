@@ -3,9 +3,12 @@ import connectDB from './config/database.js'
 import userRoute from './routes/userRoute.js'
 import cookieparser from "cookie-parser";
 import messageRoute from "./routes/messageRoute.js";
+import cors from 'cors';
 
 const app=express();
 const PORT=5000;
+
+app.use(cors({origin:"http://localhost:5173",credentials:true}));
 
 app.use(express.json());
 app.use(cookieparser());

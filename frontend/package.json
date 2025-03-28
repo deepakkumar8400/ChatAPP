@@ -9,11 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.6.1",
     "axios": "^1.8.4",
     "preact": "^10.26.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",
     "react-redux": "^9.2.0",
-    "react-router-dom": "^7.4.0"
+    "react-router-dom": "^7.4.0",
+    "redux": "^5.0.1",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.10.1",
