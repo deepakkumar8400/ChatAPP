@@ -1,18 +1,26 @@
-import {useEffect } from 'react';
+// src/hooks/useGetOtherUsers.js
+import { useEffect } from 'react';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { setOtherUsers } from '../redux/userSlice';
 
-const useGetOtherUsers=()=>{
-    useEffect(()=>{
-        const fetchOtherUsers=async()=>{
+const useGetOtherUsers = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const fetchOtherUsers = async () => {
             try {
-                const res=await axios.get(`http://localhost:5000/api/v1/user`);
-                console.log(res);
+                axios.defaults.withCredentials = true;
+                const res = await axios.get('http://localhost:5000/api/v1/user');
+                console.log('Other users ->', res.data);
+                dispatch(setOtherUsers(res.data));
             } catch (error) {
                 console.log(error);
             }
-        }
-        fetchOtherUsers();
-    })
-}
+        };
 
-export default useGetOtherUsers
+        fetchOtherUsers();
+    }, [dispatch]);
+};
+
+export default useGetOtherUsers;

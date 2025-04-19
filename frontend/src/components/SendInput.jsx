@@ -4,7 +4,6 @@ import axios from "axios";
 import {useDispatch,useSelector} from "react-redux";
 import { setMessages } from '../redux/messageSlice';
 
-const BASE_URL="http://localhost:5000"
 const SendInput = () => {
     const [message, setMessage] = useState("");
     const dispatch = useDispatch();
@@ -14,7 +13,7 @@ const SendInput = () => {
     const onSubmitHandler = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`${BASE_URL}/api/v1/message/send/${selectedUser?._id}`, {message}, {
+            const res = await axios.post(`http://localhost:5000/api/v1/message/send/${selectedUser?._id}`, {message}, {
                 headers:{
                     'Content-Type':'application/json'
                 },
